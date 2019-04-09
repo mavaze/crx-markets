@@ -1,0 +1,43 @@
+
+.container {
+    width: 55%;
+    height: 200px;
+    horiz-align: center;
+}
+.input {
+    width: 180px;
+    float: left;
+    margin: 10px;
+}
+.contour {
+    width: auto;
+    float: left;
+    margin: 10px;
+    border: 1px solid gray;
+    overflow: hidden;
+}
+.bar {
+    height: 200px;
+    width: 40px;
+    float: left;
+    margin: 2px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.empty {
+    text-align: center;
+}
+.water {
+    /*border: 1px solid cornflowerblue;*/
+    background: aqua;
+}
+.surface {
+    /*border: 1px solid darkgoldenrod;*/
+    background: burlywood;
+}
+.volume {
+    float: left;
+    width: 100%;
+    text-align: center;
+}

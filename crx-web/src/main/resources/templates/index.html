@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Find the trapped rain water</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/find-water.css"/>
+    </head>
+
+    <body ng-app="app">
+        <div align="center">
+            <h1>Java EE Coding Exercise [CRX Markets]</h1>
+        </div>
+        <div class="container" ng-controller="findWaterController">
+            <div class="input">
+                <div class="row" ng-repeat="element in surfaceProfile track by $index">
+                    <label for="element">Height ({{$index}}): </label>
+                    <input type="number" id="element" style="width: 40px" ng-model="surfaceProfile[$index]" />
+                    <a class="btn btn-xs" ng-click="addRow($index)">
+                        <i class="glyphicon glyphicon-plus-sign"></i>
+                    </a>
+                    <a class="btn btn-xs" ng-click="removeRow($index)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contour">
+                <!-- <bar surface="" water="" /> simplify with directive -->
+                <div class="bar" ng-repeat="element in waterInHole track by $index" >
+                    <div class="surface" ng-style="{'height': surfaceProfile[$index] * 10 + 'px'}"></div>
+                    <div class="water" ng-style="{'height': element * 10 + 'px'}"></div>
+                    <div class="empty">{{element}}</div>
+                </div>
+            </div>
+            <div class="volume">Total Water Volume: {{totalVolume}}</div>
+        </div>
+
+        <script src="/webjars/angularjs/1.7.7/angular.min.js"></script>
+        <script src="/js/find-water.js"></script>
+    </body>
+</html>
